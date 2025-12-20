@@ -26,7 +26,7 @@ export const Tabs: FC<ITabsProps> = ({ id = 'tabs', children, testId, selected, 
   );
 
   return (
-    <div id={id} data-testId={testId}>
+    <div id={id} data-testid={testId}>
       <TabListContext value={{ selected, onTabChange, tabsId: id }}>{tabList}</TabListContext>
       <TabPanelContext
         value={{
