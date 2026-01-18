@@ -10,8 +10,17 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: ['./setupTests.ts'],
     projects: [
+      {
+        extends: true,
+        test: {
+          name: 'unit',
+          globals: true,
+          exclude: ['node_modules'],
+          environment: 'jsdom',
+          setupFiles: './setupTests.ts',
+        },
+      },
       {
         extends: true,
         plugins: [

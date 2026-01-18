@@ -5,14 +5,13 @@ import { omit } from 'lodash-es';
 import { useTab } from './context';
 import './Tab.scss';
 
-export const Tab: FC<PropsWithChildren<{ id?: string }>> = ({ children, id }) => {
+export const Tab: FC<PropsWithChildren<{ id?: string }>> = ({ children }) => {
   const tabAttributes = useTab();
 
   return (
     <div
       {...omit(tabAttributes, ['key'])}
       key={tabAttributes.key}
-      id={id}
       className={cx('tab', { 'tab--active': tabAttributes['aria-selected'] })}
     >
       {children}
